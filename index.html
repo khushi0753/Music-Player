@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Music Player</title>
-
+    
     <!-- Font Awesome Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-
+    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    <!-- Theme Toggle -->
-    <div class="theme-toggle-container">
+    <div class="theme-toggle-wrapper">
         <button class="theme-toggle-btn" id="themeToggle">
             <i class="fas fa-moon"></i>
-            <span>Dark Mode</span>
+            <span class="theme-text">Dark Mode</span>
         </button>
     </div>
+
     <div class="music-player">
         <!-- Album Art -->
         <div class="album-art" id="albumArt">
@@ -47,13 +45,13 @@
 
         <!-- Controls -->
         <div class="controls">
-            <button class="control-btn prev-btn" id="prevBtn">
+            <button class="control-btn prev-btn" id="prevBtn" aria-label="Previous song">
                 <i class="fas fa-backward"></i>
             </button>
-            <button class="control-btn play-btn" id="playBtn">
+            <button class="control-btn play-btn" id="playBtn" aria-label="Play/Pause">
                 <i class="fas fa-play"></i>
             </button>
-            <button class="control-btn next-btn" id="nextBtn">
+            <button class="control-btn next-btn" id="nextBtn" aria-label="Next song">
                 <i class="fas fa-forward"></i>
             </button>
         </div>
@@ -61,22 +59,24 @@
         <!-- Volume Control -->
         <div class="volume-container">
             <i class="fas fa-volume-down volume-icon"></i>
-            <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="50">
+            <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="50" aria-label="Volume control">
             <i class="fas fa-volume-up volume-icon"></i>
         </div>
 
         <!-- File Input -->
         <div class="file-input-container">
             <label for="fileInput" class="file-input-btn">
-                <i class="fas fa-upload"></i> Add Music Files
+                <i class="fas fa-upload"></i> 
+                <span class="btn-text">Add Music Files</span>
             </label>
             <input type="file" id="fileInput" class="file-input" accept="audio/*" multiple>
         </div>
-    
+
         <!-- Playlist -->
         <div class="playlist">
             <div class="playlist-header">
-                <i class="fas fa-list"></i> Playlist
+                <i class="fas fa-list"></i> 
+                <span>Playlist</span>
             </div>
             <div id="playlistContainer">
                 <!-- Playlist items will be dynamically added here -->
@@ -90,5 +90,4 @@
     <!-- Custom JavaScript -->
     <script src="js/scritp.js"></script>
 </body>
-
 </html>

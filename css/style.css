@@ -20,12 +20,14 @@ body {
     background: rgba(59, 55, 59, 0.806);
     backdrop-filter: blur(20px);
     border-radius: 20px;
-    padding: 30px;
-    width: 100%;
+    padding: 25px;
+    width: 90%;
     max-width: 500px;
+    min-width: 300px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.2);
     transition: all 0.3s ease;
+    margin: 20px auto;
 }
 
 .music-player:hover {
@@ -35,15 +37,14 @@ body {
 
 /* Album Art Styles */
 .album-art {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     background: linear-gradient(45deg, #8e33cb, #4ecdc4);
-    border-radius: 800px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
-    margin-left: 70px;
+    margin: 0 auto 20px;
     position: relative;
     overflow: hidden;
     animation: rotate 20s linear infinite;
@@ -219,27 +220,26 @@ body {
 }
 
 /* Theme Toggle Styles */
-.theme-toggle-container {
-    margin-bottom: 20px;
-    
-    text-align: center;
-
+.theme-toggle-wrapper {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
 }
 
 .theme-toggle-btn {
-     position: absolute;
-  top: 30px;
-  right: 1rem;
-  z-index: 5;
-  background: rgba(61, 92, 128, 0.7);
-  border: none;
-  padding: 8px 16px;
-  font-size: 1rem;
-  color: #fff;
-  cursor: pointer;
-  border-radius: 20px;
-  box-shadow: 3px 3px 0.5px rgba(0, 0, 0, 0.2);
-  transition: background 0.3s ease;
+    background: rgba(61, 92, 128, 0.7);
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .theme-toggle-btn:hover {
@@ -249,6 +249,12 @@ body {
 
 .theme-toggle-btn i {
     font-size: 16px;
+}
+
+/* Light theme specific styles */
+body.light-theme .theme-toggle-btn {
+    background: rgba(255, 255, 255, 0.7);
+    color: #333;
 }
 
 /* Light Theme Styles */
@@ -312,7 +318,7 @@ body.light-theme .file-input-btn {
 
 body.light-theme .theme-toggle-btn {
     color: #333;
-    border-color: rgba(51, 51, 51, 0.3);
+    background: rgba(255, 255, 255, 0.7);
 }
 
 body.light-theme .control-btn {
@@ -330,6 +336,23 @@ body.light-theme .playlist::-webkit-scrollbar-thumb {
 body.light-theme .playlist::-webkit-scrollbar-thumb:hover {
     background: rgba(51, 51, 51, 0.5);
 }
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .theme-toggle-wrapper {
+        top: 10px;
+        right: 10px;
+    }
+    
+    .theme-toggle-btn {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .theme-text {
+        display: none; /* Hide text on very small screens */
+    }
+}
+/* File Input Styles */
 .file-input-container {
     margin-top: 20px;
     text-align: center;
@@ -469,11 +492,12 @@ body.light-theme .playlist::-webkit-scrollbar-thumb:hover {
 @media (max-width: 768px) {
     .music-player {
         padding: 20px;
-        max-width: 350px;
+        width: 95%;
     }
 
     .album-art {
-        height: 250px;
+        width: 220px;
+        height: 220px;
     }
 
     .song-title {
@@ -497,18 +521,42 @@ body.light-theme .playlist::-webkit-scrollbar-thumb:hover {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
     .music-player {
         padding: 15px;
-        max-width: 300px;
+        border-radius: 15px;
     }
 
     .album-art {
-        height: 200px;
+        width: 180px;
+        height: 180px;
     }
 
     .song-title {
         font-size: 18px;
+    }
+
+    .song-artist, .song-album {
+        font-size: 14px;
+    }
+
+    .controls {
+        gap: 15px;
+    }
+
+    .playlist {
+        max-height: 150px;
+    }
+}
+
+@media (max-width: 400px) {
+    .album-art {
+        width: 150px;
+        height: 150px;
+    }
+
+    .song-title {
+        font-size: 16px;
     }
 
     .controls {
@@ -525,5 +573,30 @@ body.light-theme .playlist::-webkit-scrollbar-thumb:hover {
         width: 50px;
         height: 50px;
         font-size: 20px;
+    }
+
+    .theme-toggle-btn {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 350px) {
+    .music-player {
+        padding: 12px;
+    }
+
+    .album-art {
+        width: 130px;
+        height: 130px;
+    }
+
+    .song-title {
+        font-size: 15px;
+    }
+
+    .file-input-btn {
+        padding: 12px;
+        font-size: 0.9rem;
     }
 }
