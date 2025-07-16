@@ -45,28 +45,22 @@ class MusicPlayer {
     createDefaultPlaylist() {
         this.playlist = [
             {
-                title: "Marham",
-                artist: "Aditya Rakhari",
-                album: "unknown Album",
-                src: "assets/marham.mp3"
-            },
-            {
                 title: "Sahiba",
                 artist: "Aditya Rakhari",
                 album: "unknown Album",
                 src: "assets/Sahiba.mp3"
+            },
+             {
+                title: "Marham",
+                 artist: "Aditya Rakhari",
+                album: "unknown Album",
+                src: "assets/song.mp3"
             },
             {
                 title: "Pal Pal",
                 artist: "Aditya Rakhari",
                 album: "unknown Album",
                 src: "assets/Pal Pal.mp3"
-            },
-            {
-                title: "Phir kabhi",
-                artist: "Arman Malik & Arijit Singh",
-                album: "unknown Album",
-                src: "assets/kabhi.mp3"
             }
         ];
 
