@@ -106,41 +106,30 @@ class MusicPlayer {
         this.isPlaying = !this.isPlaying;
     }
 
-loadSong(index) {
-    if (index >= 0 && index < this.playlist.length) {
-        this.currentSongIndex = index;
-        const song = this.playlist[index];
-        
-        this.songTitle.textContent = song.title;
-        this.songArtist.textContent = song.artist;
-        this.songAlbum.textContent = song.album;
-        
-        // Reset the audio element
-        this.audioPlayer.src = song.src;
-        this.audioPlayer.load();
-        
-        // Only autoplay if user has already interacted
-        if (this.userHasInteracted) {
-            this.playSong();
-        } else {
-            // Show play button in ready state
-            this.playBtn.innerHTML = '<i class="fas fa-play"></i>';
-            this.isPlaying = false;
-        }
-        
-        this.updatePlaylistActiveState();
-    }
-}
+ loadSong(index) {
+        if (index >= 0 && index < this.playlist.length) {
+            this.currentSongIndex = index;
+            const song = this.playlist[index];
+            this.songTitle.textContent = song.title;
+            this.songArtist.textContent = song.artist;
+            this.songAlbum.textContent = song.album;
+            if (song.src) {
+                this.audioPlayer.src = song.src;
+            }
 
-// constructor() {
-//     this.userHasInteracted = false;
-//     // ... rest of your constructor code
-    
-//     // Add event listener for first user interaction
-//     document.addEventListener('click', () => {
-//         this.userHasInteracted = true;
-//     }, { once: true });
-// }
+            this.updatePlaylistActiveState();
+
+            // 🔁 Auto-play if player was already playing
+            if (this.isPlaying) {
+                this.audioPlayer.play();
+                this.playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                this.albumArt.classList.add('playing');
+            } else {
+                this.playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                this.albumArt.classList.remove('playing');
+            }
+        }
+    }
     
     previousSong() {
         const prevIndex = this.currentSongIndex > 0 ? this.currentSongIndex - 1 : this.playlist.length - 1;
