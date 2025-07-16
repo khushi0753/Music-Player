@@ -44,12 +44,6 @@ class MusicPlayer {
      */
     createDefaultPlaylist() {
         this.playlist = [
-             {
-                title: "Phir kabhi",
-                artist: "Arman Malik & Arijit Singh",
-                album: "unknown Album",
-                src: "assets/kabhi.mp3"
-            },
             {
                 title: "Marham",
                 artist: "Aditya Rakhari",
@@ -68,6 +62,12 @@ class MusicPlayer {
                 album: "unknown Album",
                 src: "assets/Pal Pal.mp3"
             },
+            {
+                title: "Phir kabhi",
+                artist: "Arman Malik & Arijit Singh",
+                album: "unknown Album",
+                src: "assets/kabhi.mp3"
+            }
         ];
 
         this.renderPlaylist();
