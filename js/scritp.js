@@ -48,7 +48,7 @@ class MusicPlayer {
                 title: "Marham",
                 artist: "Aditya Rakhari",
                 album: "unknown Album",
-                src: "assets/marham.mp3"
+                src: "assets/Marham.mp3"
             },
             {
                 title: "Sahiba",
