@@ -48,7 +48,7 @@ class MusicPlayer {
                 title: "Marham",
                 artist: "Aditya Rakhari",
                 album: "unknown Album",
-                src: "assets/marham.mp3"
+                src: "assets/song1.mp3"
             },
             {
                 title: "Sahiba",
@@ -106,7 +106,7 @@ class MusicPlayer {
         this.isPlaying = !this.isPlaying;
     }
 
-    loadSong(index) {
+ loadSong(index) {
         if (index >= 0 && index < this.playlist.length) {
             this.currentSongIndex = index;
             const song = this.playlist[index];
@@ -130,8 +130,7 @@ class MusicPlayer {
             }
         }
     }
-
-
+    
     previousSong() {
         const prevIndex = this.currentSongIndex > 0 ? this.currentSongIndex - 1 : this.playlist.length - 1;
         this.loadSong(prevIndex);
