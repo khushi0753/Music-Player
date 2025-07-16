@@ -132,15 +132,16 @@ loadSong(index) {
     }
 }
 
-constructor() {
-    this.userHasInteracted = false;
-    // ... rest of your constructor code
+// constructor() {
+//     this.userHasInteracted = false;
+//     // ... rest of your constructor code
     
-    // Add event listener for first user interaction
-    document.addEventListener('click', () => {
-        this.userHasInteracted = true;
-    }, { once: true });
-}
+//     // Add event listener for first user interaction
+//     document.addEventListener('click', () => {
+//         this.userHasInteracted = true;
+//     }, { once: true });
+// }
+    
     previousSong() {
         const prevIndex = this.currentSongIndex > 0 ? this.currentSongIndex - 1 : this.playlist.length - 1;
         this.loadSong(prevIndex);
